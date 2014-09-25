@@ -14,8 +14,7 @@ gem 'activerecord', '~>4.1'
 gem 'rake'
 
 gem 'shotgun'
-
-gem 'bcrypt-ruby', '-> 3.1.5'
+gem 'bcrypt'
 
 group :test do
   gem 'shoulda-matchers'
