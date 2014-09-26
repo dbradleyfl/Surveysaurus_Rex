@@ -1,10 +1,17 @@
+<br><br><br>
 <h1>Results for: <%= @survey.name %></h1>
 
 <div class="results">
   <% @questions.each do |question| %>
-    <ul><%= question.sentence %></ul>
+    <ul class="question"><%= question.sentence %></ul>
+    <blockquote>
     <% question.answers.each do |answer| %>
-      <li><%= answer.content %> - Tally: <%= answer.tally %></li>
+      <li><%= answer.content %></li>
+      <% width = answer.tally * 40 %>
+      <div class="bar_graph" style="width:<%=width%>px"><%= answer.tally %></div>
     <% end %>
+    </blockquote>
   <% end %>
 </div>
+<br>
+
