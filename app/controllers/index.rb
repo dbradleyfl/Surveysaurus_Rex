@@ -9,11 +9,12 @@ end
 
 
 get '/survey/new' do
+  @survey = Survey.first
   erb :new_survey
 end
 
 post '/survey/new' do
-  @survey = Survey.create(name: params[:name])
+  @survey = Survey.create(name: params[:name], user_id: current_user.id)
   redirect "/survey/#{@survey.id}/new"
 end
 
