@@ -31,10 +31,10 @@ Answer.create(content: "Pangea South", tally: 0, question_id: 3)
 Answer.create(content: "Jurassic Park", tally: 0, question_id: 3)
 
 
-Answer.create(content: "Wearing a suit.", tally: 5, question_id: 1)
-Answer.create(content: "Talking to people.", tally: 3, question_id: 1)
-Answer.create(content: "Ruining peoples lives.", tally: 22, question_id: 1)
+Answer.create(content: "Wearing a suit.", tally: 5, question_id: 4)
+Answer.create(content: "Talking to people.", tally: 3, question_id: 4)
+Answer.create(content: "Ruining peoples lives.", tally: 22, question_id: 4)
 
-Answer.create(content: "Half a million per year.", tally: 2, question_id: 2)
-Answer.create(content: "Not enough.", tally: 8, question_id: 2)
-Answer.create(content: "Less than a software engineer", tally: 20, question_id: 2)
+Answer.create(content: "Half a million per year.", tally: 2, question_id: 5)
+Answer.create(content: "Not enough.", tally: 8, question_id: 5)
+Answer.create(content: "Less than a software engineer", tally: 20, question_id: 5)
