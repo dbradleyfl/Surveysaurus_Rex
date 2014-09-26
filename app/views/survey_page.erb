@@ -1,0 +1,20 @@
+<h1><%= @survey.name %></h1>
+
+
+<div class="survey_form">
+
+  <form action="/surveys/<%=@survey.id%>", method="post">
+    <% i = 1 %>
+    <% while i <= @questions.length %>
+      <% @questions.each do |question| %>
+        <p><%= question.sentence %></p>
+            <% question.answers.each do |answer| %>
+              <input type="radio", name="question<%=i%>" value="<%= answer.id %>" > <%= answer.content %><br>
+            <% end %>
+          <% i += 1 %>
+      <% end %>
+    <% end %>
+    <br>
+    <input type="submit", value="Submit Survey Answers">
+  </form>
+</div>
