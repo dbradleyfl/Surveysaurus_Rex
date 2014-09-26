@@ -1,17 +1,17 @@
 
-
-<section>
-
+<section class="home">
 
   <h1>Available Surveys</h1>
 
   <ul>
     <% @all_surveys.each do |survey| %>
-      <li><%= survey.name.capitalize %> --- Survey By <%= User.find_by(id: survey.user_id).name %></li>
+      <li class="li-underline">
+          <a href="/survey/<%= survey.id %>" class="clearfix block">
+            <span class="float-left"><%= survey.name.capitalize %></span>
+            <span class="float-right">Survey By <%= User.find_by(id: survey.user_id).name.capitalize %></span>
+          </a>
+      </li>
     <% end %>
   </ul>
 
 </section>
-
-
-

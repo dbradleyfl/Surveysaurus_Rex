@@ -11,6 +11,7 @@
     application.css is where you put your styles
   -->
   <link rel="stylesheet" href="/css/application.css">
+  <link rel="stylesheet" href="/css/bar_graph.css">
 
 
   <title>Surveysaurus Rex</title>
@@ -22,6 +23,7 @@
     <nav>
         <a href="/"><li>Home</li></a>
         <a href="/user/<%= current_user.id %>/surveys"><li>My Surveys</li></a>
+        <a href="/survey/new">Create Survey</a>
         <a href="/sign-out"><li>Sign out</li></a>
     </nav>
   </div>

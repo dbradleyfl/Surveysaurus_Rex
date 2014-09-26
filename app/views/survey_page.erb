@@ -1,15 +1,17 @@
-<h1><%= @survey.name %></h1>
 
 
-<div class="survey_form">
+<section class="survey_form">
+
+  <h1><%= @survey.name %></h1>
+
 
   <form action="/surveys/<%=@survey.id%>", method="post">
     <% i = 1 %>
     <% while i <= @questions.length %>
       <% @questions.each do |question| %>
-        <p><%= question.sentence %></p>
+        <p><%= question.sentence.capitalize %></p>
             <% question.answers.each do |answer| %>
-              <input type="radio", name="question<%=i%>" value="<%= answer.id %>" > <%= answer.content %><br>
+              <input type="radio", name="question<%=i%>" value="<%= answer.id %>" > <%= answer.content.capitalize %><br>
             <% end %>
           <% i += 1 %>
       <% end %>
@@ -17,4 +19,4 @@
     <br>
     <input type="submit", value="Submit Survey Answers">
   </form>
-</div>
+</section>
