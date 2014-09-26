@@ -32,6 +32,16 @@ h1,h2{
   font-weight: bold;
 }
 
+.li-underline{
+  margin: 20px 0;
+  padding: 10px 0;
+  border-bottom: 3px dotted black
+}
+
+.home li a:hover span{
+  text-decoration: underline;
+}
+
 #main-nav {
   width: 100%;
   background-color: white;
@@ -75,10 +85,35 @@ section {
   border-radius: 15px;
 }
 
+section a{
+  color: black;
+  text-decoration: underline;
+}
+
 ul{
   padding: 0;
 }
 
 li{
   list-style: none;
+}
+
+.float-left{
+  float: left;
+  max-width: 48%;
+}
+
+.float-right{
+  float: right;
+  max-width: 48%;
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.block{
+  display: block;
 }
