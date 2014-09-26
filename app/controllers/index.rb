@@ -12,27 +12,34 @@ get '/survey/new' do
   erb :new_survey
 end
 
-post '/survey/new' do  #
+post '/survey/new' do
+  @survey = Survey.create(name: params[:name])
+  redirect "/survey/#{@survey.id}/new"
+end
+
+get '/survey/:id/new' do
+  @survey = Survey.find(params[:id])
+  erb :new_survey
+end
+
+put '/survey/:id/new' do
+  p "in the route****************"
   p params
-  question = Question.new(sentence: params[:sentence])
-  answer1 = Answer.new(content: params[:answer1], question_id: question.id, tally: 0)
-  answer2 = Answer.new(content: params[:answer2], question_id: question.id, tally: 0)
-  answer3 = Answer.new(content: params[:answer3], question_id: question.id, tally: 0)
-  question.save
-  answer1.save
-  answer2.save
-  answer3.save
+  survey = Survey.find(params[:id])
+  @question = Question.create(sentence: params[:sentence], survey_id: survey.id)
+  @answer1 = Answer.create(content: params[:answer1], question_id: @question.id, tally: 0)
+  @answer2 = Answer.create(content: params[:answer2], question_id: @question.id, tally: 0)
+  @answer3 = Answer.create(content: params[:answer3], question_id: @question.id, tally: 0)
   content_type :json
-  question.sentence.to_json
-  answer1.content.to_json
-  answer2.content.to_json
-  answer3.content.to_json
+  new_entry = erb :_new_survey_partial, :layout => false, locals: {answer1: @answer1, answer2: @answer2, answer3: @answer3, question: @question}
+  {pizza: new_entry}.to_json
   # if survey
   #   question = Question.new()
   # else
   #   survey = Survey.new(user_id: session[:user_id], name: params[:name])
   # end
 end
+
 
 
 # post '/survey/new' do  #from partial to new_survey
