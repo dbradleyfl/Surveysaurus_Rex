@@ -35,9 +35,9 @@ post '/survey/new' do  #
 end
 
 
-get '/survey/:id' do
+# get '/survey/:id' do
 
-end
+# end
 
 # post '/survey/new' do  #from partial to new_survey
 #   if survey.save
