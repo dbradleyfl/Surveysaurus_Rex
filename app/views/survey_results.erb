@@ -1,0 +1,10 @@
+<h1>Results for: <%= @survey.name %></h1>
+
+<div class="results">
+  <% @questions.each do |question| %>
+    <ul><%= question.sentence %></ul>
+    <% question.answers.each do |answer| %>
+      <li><%= answer.content %> - Tally: <%= answer.tally %></li>
+    <% end %>
+  <% end %>
+</div>
