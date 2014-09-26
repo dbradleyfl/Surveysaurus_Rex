@@ -1,8 +1,7 @@
-<article id = "<%= question.id %>">
+<article class = "new-survey-partial" id = "<%= survey.id %>">
   <a href= '/surveys/new' class="create-survey-button"></a>
-  <h2><%= question.name %></h2>\
-  <p>
-    <span class='questions'>Some Question</span>
-
-  </p>
+  <h2><%= @question.name %></h2>
+  <p><%= @answer1.content %></p>
+  <p><%= @answer2.content %></p>
+  <p><%= @answer3.content %></p>
 </article>

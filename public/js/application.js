@@ -10,11 +10,14 @@ $('#question').on("submit", function(event) {
     url: '/survey/new',
     type: 'POST',
     data: serializedData
-    debugger
   }).done(function(serverData){
     console.log("success!");
     console.log(serverData);
-    $(".survey-container").append(serverData);
+    // for(i=0; i< serverData.length; i++) {
+      $(".survey-container").append(serverData.entry);
+
+    // }
+    // $(".survey-container").append(serverData);
   }).fail(function(serverData){
     console.log("fail");
     console.log(serverData);
