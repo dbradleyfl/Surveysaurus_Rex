@@ -20,11 +20,13 @@
 
 <body>
   <% if current_user != nil %>
-  <nav id="main-nav">
-    <a href="/">Home</a>
-      <a href="/user/<%= current_user.id %>/surveys"><li>My Surveys</li></a>
-      <a href="/sign-out"><li>Sign out</li></a>
-  </nav>
+  <div id="main-nav">
+    <nav>
+        <a href="/"><li>Home</li></a>
+        <a href="/user/<%= current_user.id %>/surveys"><li>My Surveys</li></a>
+        <a href="/sign-out"><li>Sign out</li></a>
+    </nav>
+  </div>
   <% end %>
   <%= yield %>
 </body>
