@@ -1,0 +1,19 @@
+
+<section class="results">
+
+  <h1>Results for: <%= @survey.name %></h1>
+
+
+  <% @questions.each do |question| %>
+    <ul class="question"><%= question.sentence.capitalize %></ul>
+    <blockquote>
+    <% question.answers.each do |answer| %>
+      <li><%= answer.content.capitalize %></li>
+      <% width = answer.tally * 30 %>
+      <div class="bar_graph" style="width:<%=width%>px"><%= answer.tally %></div>
+    <% end %>
+    </blockquote>
+  <% end %>
+</section>
+
+
