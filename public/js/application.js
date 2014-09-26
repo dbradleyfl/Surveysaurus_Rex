@@ -10,6 +10,7 @@ $('#question').on("submit", function(event) {
     url: '/survey/new',
     type: 'POST',
     data: serializedData
+    debugger
   }).done(function(serverData){
     console.log("success!");
     console.log(serverData);
