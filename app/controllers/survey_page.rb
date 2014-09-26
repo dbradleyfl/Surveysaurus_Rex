@@ -10,11 +10,16 @@ post '/surveys/:id' do
   @questions = @survey.questions
   @max = @survey.questions.length
   i = 1
+  while i <= @max
+    name = ("question" + "#{i}").to_sym
+    result = params[name]
+    @answer = Answer.find(result.to_i)
+    p @answer
+    @answer.tally += 1
+    @answer.save!
+    p @answer
+    i += 1
+  end
 
-
-  # redirect '/survey/:id/results'
-end
-
-get '/survey/:id/results' do
-  erb :survey_results
+  redirect "/survey/#{@survey.id}/results"
 end
