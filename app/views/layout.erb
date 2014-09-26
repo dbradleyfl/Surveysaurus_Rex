@@ -12,7 +12,7 @@
   -->
   <link rel="stylesheet" href="/css/application.css">
   <link rel="stylesheet" href="/css/bar_graph.css">
-
+  <link href='http://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'>
 
   <title>Surveysaurus Rex</title>
 </head>
@@ -20,11 +20,17 @@
 <body>
   <% if current_user != nil %>
   <div id="main-nav">
-    <nav>
-        <a href="/"><li>Home</li></a>
-        <a href="/user/<%= current_user.id %>/surveys"><li>My Surveys</li></a>
-        <a href="/survey/new">Create Survey</a>
-        <a href="/sign-out"><li>Sign out</li></a>
+    <nav class="clearfix">
+      <div class="float-left">
+        <a href="/"><h1 id="logo">Surveysaurous Rex!</h1></a>
+      </div>
+
+        <div class="float-right">
+          <a href="/"><li>Home</li></a>
+          <a href="/user/<%= current_user.id %>/surveys"><li>My Surveys</li></a>
+          <a href="/survey/new"><li>Create Survey</li></a>
+          <a href="/sign-out"><li>Sign out</li></a>
+        </div>
     </nav>
   </div>
   <% end %>
