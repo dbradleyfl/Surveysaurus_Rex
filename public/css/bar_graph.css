@@ -6,8 +6,5 @@
 }
 
 .results {
-  margin-left: 15%;
-  font-weight: bold;
-  font-size: 1.25em;
-  font-family: Helvetica;
+  text-align: left;
 }
