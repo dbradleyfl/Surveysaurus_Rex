@@ -7,6 +7,7 @@ end
 
 post '/surveys/:id' do
   @survey = Survey.find(params[:id])
+  @questions = @survey.questions
   @max = @survey.questions.length
   i = 1
 
