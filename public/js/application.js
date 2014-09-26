@@ -23,7 +23,8 @@ $('#question').on("submit", function(event) {
     console.log(serverData);
   }).always(function(){
     $('#loading-indicator').css({'display': "none"})
-  })
+  });
+  that.reset();
 });
   // This is called after the document has loaded in its entirety
   // This guarantees that any elements we bind to will exist on the page
