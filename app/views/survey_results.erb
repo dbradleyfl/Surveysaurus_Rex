@@ -17,7 +17,6 @@
       <li><%= answer.content.capitalize %></li>
       <% @width = (answer.tally/@sum)*100 %> <!-- Max Width = 500px -->
       <div class="bar_graph" style="width:<%=@width%>%"><%= answer.tally %></div>
-      <div class="results_balls"></div>
     <% end %>
 
     </blockquote>
