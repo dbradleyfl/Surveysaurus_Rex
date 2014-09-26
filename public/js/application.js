@@ -7,14 +7,17 @@ $('#question').on("submit", function(event) {
   var serializedData = $(that).serialize()
   event.preventDefault();
   $.ajax({
-    url: '/survey/new',
-    type: 'POST',
+    url: $('#question').attr('action'),//'/survey/:id/new',
+    type: 'PUT',
     data: serializedData
-    debugger
   }).done(function(serverData){
     console.log("success!");
     console.log(serverData);
-    $(".survey-container").append(serverData);
+   // for(i=0; i< serverData.length; i++) {
+    $(".survey-container").append(serverData.pizza);
+
+   // }
+    // $(".survey-container").append(serverData);
   }).fail(function(serverData){
     console.log("fail");
     console.log(serverData);
