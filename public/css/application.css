@@ -1,5 +1,7 @@
 body{
   background-color: #D6F5D6;
+  background-image: url('http://myheartscontentblog.files.wordpress.com/2013/05/img_7586.jpg');
+  background-size: cover;
 }
 
 h1,h2{
@@ -11,8 +13,8 @@ h1,h2{
   padding: 20px;
   max-width: 400px;
   margin: 50px auto 50px;
-  border: 3px solid black;
-  border-radius: 15px;
+  /*border: 3px solid black;
+*/  border-radius: 15px;
   text-align: center;
   font-size: 1.4em;
 }
@@ -22,11 +24,12 @@ h1,h2{
 }
 
 .login img{
-  background-color: #D6F5D6;
+  background-color: #228B22 ;
   padding: 30px;
-  border: 3px solid black;
+  /*border: 3px solid black;*/
   max-height: 200px;
   border-radius: 15px;
+  opacity: 0.9;
 }
 
 .login label{
@@ -88,8 +91,9 @@ section {
   margin-top: 100px;
   text-align: center;
   font-size: 1.5em;
-  border: 3px solid black;
+  /*border: 3px solid black;*/
   border-radius: 15px;
+  opacity: 0.90;
 }
 
 section a{

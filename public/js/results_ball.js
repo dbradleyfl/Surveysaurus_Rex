@@ -1,3 +1,0 @@
-var Ball = function() {
-
-}
