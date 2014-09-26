@@ -7,19 +7,20 @@ $('#question').on("submit", function(event) {
   var serializedData = $(that).serialize()
   event.preventDefault();
   $.ajax({
-    url: '/survey/new',
+    url: '/survey/:id/new',
     type: 'POST',
     data: serializedData
   }).done(function(serverData){
     console.log("success!");
     console.log(serverData);
-    // for(i=0; i< serverData.length; i++) {
-      $(".survey-container").append(serverData.entry);
+   // for(i=0; i< serverData.length; i++) {
+    $(".survey-container").append(serverData.pizza);
 
-    // }
+   // }
     // $(".survey-container").append(serverData);
   }).fail(function(serverData){
     console.log("fail");
+    debugger
     console.log(serverData);
   }).always(function(){
     $('#loading-indicator').css({'display': "none"})
