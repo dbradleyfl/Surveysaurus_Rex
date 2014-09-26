@@ -35,6 +35,7 @@ post '/survey/new' do  #
 end
 
 
+
 # post '/survey/new' do  #from partial to new_survey
 #   if survey.save
 #     content_type :json

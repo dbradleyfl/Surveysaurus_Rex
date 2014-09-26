@@ -7,11 +7,19 @@
   <% @questions.each do |question| %>
     <ul class="question"><%= question.sentence.capitalize %></ul>
     <blockquote>
+
+    <% @sum = 0.00 %>
+    <% question.answers.each do |answer| %>
+      <% @sum += answer.tally %>
+    <% end %>
+
     <% question.answers.each do |answer| %>
       <li><%= answer.content.capitalize %></li>
-      <% width = answer.tally * 30 %>
-      <div class="bar_graph" style="width:<%=width%>px"><%= answer.tally %></div>
+      <% @width = (answer.tally/@sum)*100 %> <!-- Max Width = 500px -->
+      <div class="bar_graph" style="width:<%=@width%>%"><%= answer.tally %></div>
+      <div class="results_balls"></div>
     <% end %>
+
     </blockquote>
   <% end %>
 </section>
