@@ -1,0 +1,33 @@
+<section class="login">
+  <img src="imgs/t-rex.png">
+  <div>
+    <h2>Sign-in</h2>
+    <form id="sign-in" method="post" action="/sign-in">
+      <label class="label" for="email">Email</label><br>
+      <input type="email" name="email" placeholder="e.g., me@example.com" value="<%= @email %>"><br>
+      <label class="label" for="password">Password</label><br>
+      <input type="password" name="password" placeholder="6 or more characters">
+      <br>
+      <div class="submit"><input type="submit" value="Sign In"></div>
+    </form>
+  </div>
+
+  <div>
+    <h2>Sign-up</h2>
+    <form id="sign-up" method="post" action="/sign-up">
+      <label class="label" for="name">Name</label><br>
+      <input type="text" name="user[name]" placeholder="e.g., joe" >
+      <br>
+
+      <label class="label" for="email">Email</label><br>
+      <input type="email" name="user[email]" placeholder="e.g., me@example.com" >
+      <br>
+
+      <label class="label" for="password">Password</label><br>
+      <input type="password" name="user[password]" placeholder="6 or more characters">
+      <br>
+
+      <div class="submit"><input type="submit" value="Sign Up"></div>
+    </form>
+  </div>
+</section>
