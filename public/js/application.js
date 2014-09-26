@@ -7,8 +7,8 @@ $('#question').on("submit", function(event) {
   var serializedData = $(that).serialize()
   event.preventDefault();
   $.ajax({
-    url: '/survey/:id/new',
-    type: 'POST',
+    url: $('#question').attr('action'),//'/survey/:id/new',
+    type: 'PUT',
     data: serializedData
   }).done(function(serverData){
     console.log("success!");
@@ -20,7 +20,6 @@ $('#question').on("submit", function(event) {
     // $(".survey-container").append(serverData);
   }).fail(function(serverData){
     console.log("fail");
-    debugger
     console.log(serverData);
   }).always(function(){
     $('#loading-indicator').css({'display': "none"})

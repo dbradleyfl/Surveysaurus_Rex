@@ -22,10 +22,11 @@ get '/survey/:id/new' do
   erb :new_survey
 end
 
-post '/survey/:id/new' do  #
+put '/survey/:id/new' do
   p "in the route****************"
   p params
-  @question = Question.create(sentence: params[:sentence], survey_id: :id)
+  survey = Survey.find(params[:id])
+  @question = Question.create(sentence: params[:sentence], survey_id: survey.id)
   @answer1 = Answer.create(content: params[:answer1], question_id: @question.id, tally: 0)
   @answer2 = Answer.create(content: params[:answer2], question_id: @question.id, tally: 0)
   @answer3 = Answer.create(content: params[:answer3], question_id: @question.id, tally: 0)

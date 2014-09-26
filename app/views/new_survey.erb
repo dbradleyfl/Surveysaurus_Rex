@@ -15,9 +15,11 @@
   </article>
 </div>
 
-<form id="question" method = "post" action="/survey/new">
+<form id="question" method = "post" action="/survey/<%=@survey.id%>/new">
+  <input type = "hidden" method = "put">
   <input type="text" name="sentence" placeholder="Enter your question">
-  <input type="text" name="answer1" placeholder="Enter first possible answer" > <input type="text" name="answer2" placeholder="Enter second possible answer">
+  <input type="text" name="answer1" placeholder="Enter first possible answer" >
+  <input type="text" name="answer2" placeholder="Enter second possible answer">
   <input type="text" name="answer3" placeholder="Enter third possible answer">
   <input type="submit" value="submit your question">
 </form>
