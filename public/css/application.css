@@ -47,6 +47,7 @@ h1,h2{
 }
 
 #main-nav {
+  z-index: 1;
   width: 100%;
   background-color: white;
   border-bottom: 3px solid black;
@@ -131,4 +132,16 @@ li{
 
 #logo{
   margin: 0;
+}
+
+
+.create-survey input{
+  margin: 20px; 
+}
+
+#submit-survey{
+  border: 3px solid black;
+  border-radius: 15px;
+  padding: 5px;
+  background-color: #99FF99;
 }
